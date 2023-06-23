@@ -57,3 +57,7 @@ Route::get('/donacionesinsert', [DonacionController::class, 'insertarDonacion'])
 // banear y desbanear
 Route::get('/banearusuario', [UsuarioController::class, 'banearUsuario']);
 Route::get('/desbanear', [UsuariosBanController::class, 'eliminarUsuarioBan']);
+
+// consultas
+Route::get('/listaposts', [PostsController::class, 'listadoposts']);
+Route::get('/pie', [DonacionController::class, 'pieDePagina']);

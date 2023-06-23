@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Donacion;
 use App\Models\Posts;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class PostsController extends Controller
 {
@@ -30,6 +33,35 @@ class PostsController extends Controller
     public function index()
     {
         $posts = Posts::all();
+        return response()->json($posts);
+    }
+
+    // Método para mostrar todas las donaciones
+    public function pieDePagina()
+    {
+        $mesActual = Carbon::now()->month;
+
+        $donaciones = Donacion::whereMonth('fecha', $mesActual)->get();
+
+        $totalDonaciones = $donaciones->count();
+
+        $mensaje = ($totalDonaciones < 3) ? '¡Ayúdanos a seguir creando más contenido gratuito!' : '';
+
+        return [
+            'totalDonaciones' => $totalDonaciones,
+            'mensaje' => $mensaje,
+            'donaciones' => $donaciones
+        ];
+    }
+
+    public function listadoposts()
+    {
+        $posts = Posts::with('categorias', 'subcategorias')->get();
+
+        foreach ($posts as $post) {
+            $post->piedepagina = $this->pieDePagina();
+        }
+
         return response()->json($posts);
     }
 }

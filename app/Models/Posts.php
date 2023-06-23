@@ -22,5 +22,15 @@ class Posts extends Model
         return $this->belongsTo(Usuario::class, 'nickname');
     }
 
+    public function categorias()
+    {
+        return $this->belongsToMany(Categoria::class, 'categoriasposts', 'idpost', 'idcategoria');
+    }
+
+    public function subcategorias()
+    {
+        return $this->belongsToMany(Subcategoria::class, 'subcategoriasposts', 'idpost', 'idsubcategoria');
+    }
+
     use HasFactory;
 }
