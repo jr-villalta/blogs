@@ -14,7 +14,7 @@ class Donacion extends Model
     
     // Definir los campos de la tabla que pueden ser llenados masivamente
     protected $fillable = [
-        'nickname', 'idformapago', 'cantidad', 'fecha'
+        'nickname', 'idformadonacion', 'cantidad', 'fecha'
     ];
 
     // Relación con el modelo usuario
@@ -24,8 +24,8 @@ class Donacion extends Model
     }
 
     // Relación con el modelo formapago
-    public function formapago()
+    public function formadonacion()
     {
-        return $this->belongsTo(FormaPagoDonacion::class, 'idformapago');
+        return $this->belongsTo(FormaDonacion::class, 'idformapago');
     }
 }

@@ -13,18 +13,18 @@ class Comentarios extends Model
 
     // Definir los campos de la tabla que pueden ser llenados masivamente
     protected $fillable = [
-        'idPost', 'nickName', 'comentario', 'fechaHoraComentario'
+        'idpost', 'nickname', 'comentario', 'fechahoracomentario'
     ];
 
     // Relación con el modelo Post
     public function post()
     {
-        return $this->belongsTo(Post::class, 'idPost');
+        return $this->belongsTo(Post::class, 'idpost');
     }
 
     // Relación con el modelo Usuario
     public function usuario()
     {
-        return $this->belongsTo(Usuario::class, 'nickName');
+        return $this->belongsTo(Usuario::class, 'nickname');
     }
 }

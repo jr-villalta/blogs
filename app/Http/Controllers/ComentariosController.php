@@ -12,8 +12,7 @@ class ComentariosController extends Controller
 
         // Crear una nueva instancia del modelo Comentario
         $comentario = new Comentarios();
-        $comentario->idpost = 1;
-        //$comentario->nickname ='Ale';
+        $comentario->idpost = 2;
         $comentario->nickname = 'jmvf';
         $comentario->comentario = 'wow';
         $comentario->fechahoracomentario = '2023/06/09 12:00:00';

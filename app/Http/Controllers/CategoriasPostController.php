@@ -12,4 +12,14 @@ class CategoriasPostController extends Controller
         $categoriaspost = Categoriaspost::all();
         return response()->json($categoriaspost);
     }
+
+    // insertar una nueva categoriaspost
+    public function insertarCategoriaspost()
+    {
+        $categoriaspost = new Categoriaspost();
+        $categoriaspost->idcategoria = 2;
+        $categoriaspost->idpost = 2;
+        $categoriaspost->save();
+        return response()->json(['message' => 'Categoriaspost creado con éxito'], 201);
+    }
 }

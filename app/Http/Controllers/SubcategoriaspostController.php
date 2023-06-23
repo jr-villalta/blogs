@@ -12,5 +12,15 @@ class SubcategoriaspostController extends Controller
         $subcategoriaspost = Subcategoriaspost::all();
         return response()->json($subcategoriaspost);
     }
+
+    // insertar una nueva subcategoriaspost
+    public function insertarSubcategoriaspost()
+    {
+        $subcategoriaspost = new Subcategoriaspost();
+        $subcategoriaspost->idsubcategoria = 2;
+        $subcategoriaspost->idpost = 2;
+        $subcategoriaspost->save();
+        return response()->json(['message' => 'Subcategoriaspost creado con éxito'], 201);
+    }
 }
 

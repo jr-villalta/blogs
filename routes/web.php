@@ -29,6 +29,7 @@ Route::get('/', function () {
     return view('welcome');
     
 });
+
 // rutas
 Route::get('/niveles', [NivelesController::class, 'index']);
 Route::get('/usuarios', [UsuarioController::class, 'index']);
@@ -43,16 +44,16 @@ Route::get('/donaciones', [DonacionController::class, 'index']);
 Route::get('/formasdonacion', [FormaDonacionController::class, 'index']);
 Route::get('/usuariosbaneados', [UsuariosBanController::class, 'index']);
 
-/*
 // inserts
-Route::get('/comentarioInsert', [ComentariosController::class, 'insertarComentario']);
-Route::get('/bitcoinInsert', [BitcoinController::class, 'insertarBit']);
-Route::get('/paypalInsert', [PaypalController::class, 'insertarPay']);
-Route::get('/tarjetaInsert', [TarjetaController::class, 'insertarTar']);
-Route::get('/postInsert', [PostsController::class, 'insertarposts']);
-Route::get('/subcatInsert', [SubCategoriaController::class, 'insertarsubCategoria']);
-Route::get('/postsubInsert', [PostSubcategoriaController::class, 'insertarsubCategoriapost']);
+Route::get('/usuarioinsert', [UsuarioController::class, 'insertarUsuario']);
+Route::get('/categoriasinsert', [CategoriasController::class, 'insertarCategoria']);
+Route::get('/subcategoriasinsert', [SubCategoriaController::class, 'insertarsubCategoria']);
+Route::get('/postsinsert', [PostsController::class, 'insertarPost']);
+Route::get('/categoriaspostsinsert', [CategoriasPostController::class, 'insertarCategoriaspost']);
+Route::get('/subcategoriaspostsinsert', [SubcategoriaspostController::class, 'insertarSubcategoriaspost']);
+Route::get('/comentariosinsert', [ComentariosController::class, 'insertarComentario']);
+Route::get('/donacionesinsert', [DonacionController::class, 'insertarDonacion']);
+
+// banear y desbanear
+Route::get('/banearusuario', [UsuarioController::class, 'banearUsuario']);
 Route::get('/desbanear', [UsuariosBanController::class, 'eliminarUsuarioBan']);
-Route::get('/banear', [UsuarioController::class, 'banearUsuario']);
-Route::get('/categoriaInsert', [CategoriasController::class, 'insertarCategoria']);
-*/

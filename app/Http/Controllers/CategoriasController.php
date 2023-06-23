@@ -17,7 +17,7 @@ class CategoriasController extends Controller
     public function insertarCategoria()
     {
         $categoria = new Categoria();
-        $categoria->nombrecategoria = 'categoria2';
+        $categoria->nombrecategoria = 'categoria laravel';
         $categoria->save();
         return response()->json(['message' => 'Categoria creado con éxito'], 201);
     }

@@ -13,7 +13,7 @@ class Posts extends Model
 
     // Definir los campos de la tabla que pueden ser llenados masivamente
     protected $fillable = [
-        'nickname', 'encabezado', 'cuerpo', 'imagen', 'fechaPost'
+        'nickname', 'encabezado', 'cuerpo', 'imagen', 'fechapost'
     ];
 
     // Relación con el modelo Usuario

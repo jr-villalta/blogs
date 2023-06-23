@@ -1,26 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\posts;
+use App\Models\Posts;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
-    public function insertarposts()
+    public function insertarpost()
     {
         
-
         // Crear una nueva instancia del modelo Comentario
         $posts = new Posts();
-        $posts->idpost = 2;
-        $posts->nickname = 'ale';
-        $posts->idcategoria = 1;
+        $posts->nickname = 'usuario4';
         $posts->encabezado= 'wow';
         $posts->cuerpo= 'prueba';
         $posts->imagen= 'imga.jpg';
-        $posts->piepagina= 'increible';
         $posts->fechapost= '2023/06/10 12:00:00';
-
 
         // Guardar el comentario en la base de datos
         $posts->save();
@@ -31,6 +26,7 @@ class PostsController extends Controller
             'posts' => $posts,
         ]);
     }
+    
     public function index()
     {
         $posts = Posts::all();

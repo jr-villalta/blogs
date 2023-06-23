@@ -25,4 +25,18 @@ class UsuarioController extends Controller
             return response()->json(['message' => 'Usuario no encontrado'], 404);
         }
     }
+
+    // insertar un nuevo usuario
+    public function insertarUsuario()
+    {
+        $usuario = new Usuario();
+        $usuario->nickname = 'jmvf';
+        $usuario->nombre = 'Juan';
+        $usuario->apellido = 'Vargas';
+        $usuario->correo = 'jmvf2@gmail.com';
+        $usuario->contrasenia = '123456';
+        $usuario->idnivel = 3;
+        $usuario->save();
+        return response()->json(['message' => 'Usuario creado con éxito'], 201);
+    }
 }

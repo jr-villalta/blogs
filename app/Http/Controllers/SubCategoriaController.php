@@ -11,12 +11,8 @@ class SubCategoriaController extends Controller
       
         // Crear una nueva instancia del modelo Comentario
         $Subcategoria = new Subcategoria();
-        $Subcategoria->idcategoria  = 1;
         $Subcategoria->nombresubcategoria  = 'postres';
-        //$Subcategoria->nickname =1;
        
-
-
         // Guardar el comentario en la base de datos
         $Subcategoria->save();
 
@@ -26,6 +22,7 @@ class SubCategoriaController extends Controller
             'Subcategoria' => $Subcategoria,
         ]);
     }
+
     public function index()
     {
         $Subcategoria = Subcategoria::all();

@@ -9,6 +9,7 @@ class Subcategoriaspost extends Model
 {
     use HasFactory;
     protected $table = 'subcategoriasposts'; // Nombre de la tabla en la base de datos
+    public $incrementing = false; // Indica que no se utilizará una clave primaria
     public $timestamps = false; // Indica que no se utilizarán los campos "created_at" y "updated_at"
     
     // Definir los campos de la tabla que pueden ser llenados masivamente
